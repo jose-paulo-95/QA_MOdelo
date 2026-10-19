@@ -1,0 +1,7 @@
+{
+  "origem": "1001",
+  "destino": "2002",
+  "valor": "100,00",
+  "usuario": "cliente.hml",
+  "senhaEnv": "APP_SENHA_HML"
+}

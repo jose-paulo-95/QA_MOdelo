@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+tests/mobile/apps/*.apk
+tests/mobile/apps/*.ipa
+tests/mobile/apps/*.app/
+.wdio/

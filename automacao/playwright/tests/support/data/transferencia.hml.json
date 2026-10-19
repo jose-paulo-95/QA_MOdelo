@@ -1,0 +1,7 @@
+{
+  "origem": "1001",
+  "destino": "2002",
+  "valorValido": 100,
+  "valorAcimaLimite": 1000.01,
+  "chaveIdempotenciaBase": "trf-hml"
+}

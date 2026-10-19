@@ -1,0 +1,18 @@
+---
+description: Ao revisar casos TC- manuais ou gerar relatório/métricas de release, usar as skills do padrão QA
+alwaysApply: false
+---
+
+# Casos manuais e relatório
+
+Quando o usuário pedir para revisar casos de teste, validar TC-/CT-, checar oráculo de caso manual, ou preparar casos para automação:
+
+1. Skill `revisar-casos-teste` + `reference.md` + glossário `_shared`.
+2. Entrada preferencial: `HANDOFF_CASOS`.
+3. Não implementar código nesta etapa.
+
+Quando pedir relatório de teste, veredito de release, go/no-go, ou métricas M1–M4:
+
+1. Skill `gerar-relatorio-metricas` + `docs/padrao-qualidade/10-metricas.md`.
+2. Não inventar números; lacuna impede “Recomendo seguir”.
+3. Preencher o template `relatorio-de-teste.md`.

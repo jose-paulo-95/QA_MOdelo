@@ -1,0 +1,16 @@
+---
+description: Ao implementar ou revisar automação Playwright/Cypress/k6, seguir o boilerplate e as skills do padrão QA
+alwaysApply: false
+---
+
+# Automação no padrão QA
+
+Quando o usuário pedir para automatizar um cenário/TC- ou revisar spec:
+
+1. Sem `TC-` / HANDOFF_CASOS → não implementar; redirecionar para escrever/revisar casos.
+2. Implementação → `implementar-automacao-teste` + glossário `_shared` + `reference.md` + `examples.md` + pasta `automacao/` → `HANDOFF_IMPLEMENTACAO`.
+3. Revisão → `revisar-automacao-teste` + checklist `12-checklist-revisao-automacao.md` → `HANDOFF_REVIEW_CODIGO`.
+4. Playwright web/API; Cypress legado web; Appium+WDIO app nativo; k6 desempenho.
+5. Título com `TC-`, camadas, oráculo de negócio; sem wait fixo nem segredo no Git.
+6. Não aceitar Playwright/Cypress como evidência de app nativo.
+7. Auto-checagem; severidades bloqueante/importante/sugestão.

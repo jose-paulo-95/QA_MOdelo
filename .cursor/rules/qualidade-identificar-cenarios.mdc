@@ -1,0 +1,15 @@
+---
+description: Ao analisar requisitos ou perguntar o que testar, usar o padrão de identificação de cenários do core bancário
+alwaysApply: false
+---
+
+# Identificação de cenários
+
+Quando o usuário colar requisito, user story, aceite ou perguntar o que testar / quais cenários / escopo de teste:
+
+1. Skill `identificar-cenarios-teste` + glossário `_shared/glossario-padrao.md` + `reference.md` / `examples.md`.
+2. Seguir `docs/padrao-qualidade/11-identificar-cenarios.md`.
+3. Separar negócio e canal; regra na API, jornada no canal.
+4. Emitir tabela + bloco `HANDOFF_IDENTIFICACAO`.
+5. Auto-checagem da skill.
+6. Detalhar `TC-` só se pedido (`escrever-casos-do-padrao`); em seguida sugerir `revisar-casos-teste` se R1–R4.
