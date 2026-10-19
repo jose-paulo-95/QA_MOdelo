@@ -3,8 +3,10 @@ name: revisar-automacao-teste
 description: >-
   Revisa código de automação Playwright, Cypress, Appium/WebdriverIO ou k6
   contra o padrão QA (camadas, TC- no título, oráculo, seletores, waits,
-  segredos, flaky, M3/M4) antes do PR ou merge. Use para code review de teste,
-  revisar spec mobile, checklist de PR de automação, ou validar boilerplate.
+  segredos, flaky, M3/M4) antes do PR ou merge. No Cypress, também a norma 08:
+  seletor conferido, asserção do Então, dinheiro como texto, independência e
+  filtro real de @regressao. Use para code review de teste, revisar spec
+  mobile, checklist de PR de automação, ou validar boilerplate.
   Se a entrada for requisito sem código/TC-, redirecione — não revise código inexistente.
 ---
 
@@ -31,7 +33,7 @@ Parecer **Aprovado | Aprovado com ressalvas | Rejeitado** com base no padrão.
 
 1. Localizar arquivos (diff, paths, HANDOFF_IMPLEMENTACAO).
 2. Identificar ferramenta(s).
-3. Checklist doc 12 + [reference.md](reference.md).
+3. Checklist doc 12 + [reference.md](reference.md). Em Cypress, incluir a norma 08 seções 5 a 8 e o checklist da seção 13.
 4. Achados: arquivo:linha, severidade, correção, regra.
 5. Veredito + M3/M4.
 

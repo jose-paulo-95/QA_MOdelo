@@ -58,11 +58,16 @@ test('transferencia funciona', async ({ page }) => {
 
 ## Cypress
 
+Norma [08](../../../docs/padrao-qualidade/08-padrao-cypress.md). Guia prático, um tema por arquivo: [automacao/cypress/docs/LEIA-ME.md](../../../automacao/cypress/docs/LEIA-ME.md). A camada é spec, flow e page. Jornada não vira custom command.
+
 ### Bom
 
-- Flow + page com `data-testid`
-- `cy.intercept` + assert de status da operação
-- Oráculo: `cy.request` **somente** se a API oficial ainda não está no Playwright; senão UI no Cypress e regra no job Playwright
+- Seletor na page, conferido no DOM do produto (`data-testid`; texto de negócio estável se o testid se repete)
+- `cy.intercept` + `cy.wait('@alias')` da operação; comprovante com `be.visible` antes de ler o identificador
+- Valor em reais como o operador lê (`100,00` na fixture)
+- Oráculo = Então do `TC-`. `cy.request` **somente** se a API oficial ainda não está no Playwright
+- Segredo ausente falha na hora (`support/env.ts`), sem `Bearer undefined`
+- `@regressao` no título e em `{ tags: '@regressao' }` no `it`; filtro por `@cypress/grep` 5.x no support e no config
 
 ### Ruim
 
@@ -75,12 +80,22 @@ it('teste', () => {
 });
 ```
 
+```javascript
+cy.get('[data-testid="lancamento"]').last().should('contain', '100');
+if (Cypress.$('body').text().includes('erro')) {
+  cy.contains('tentar de novo').click();
+}
+```
+
 ### Validações específicas Cypress
 
 - Spec em `cypress/e2e/specs/*.cy.ts`
 - Título com `TC-`
-- Sem `cy.wait(5000)`
+- Sem `cy.wait(número)`; espera é alias ou elemento visível
+- Sem `if` no spec; sem `testIsolation: false`; sem `.only` no Git
+- `it.skip` só com três linhas: defeito, item de trabalho, quando remover
 - Não usar como evidência de app nativo
+- Não calcular float para afirmar valor de tela
 
 ---
 

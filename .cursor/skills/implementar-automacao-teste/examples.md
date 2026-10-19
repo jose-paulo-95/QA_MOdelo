@@ -40,3 +40,7 @@ test('TC-CORE-TRF-001 debita origem e credita destino uma unica vez @regressao',
 ## Anti-exemplo (não gerar)
 
 Spec com `waitForTimeout(5000)`, `goto('https://homolog...')`, título sem `TC-`, assert só `toBeVisible`.
+
+## Cypress (legado)
+
+Espelhar `automacao/cypress/`: page com `data-testid`, flow que espera o alias e o comprovante visível, spec com um `TC-` e o Então do caso. Valor de tela vem da fixture como texto (`100,00`). Não gerar `cy.wait(3000)`, `if` na tela, `.only`, nem `cy.request` se o mesmo oráculo já está no Playwright.

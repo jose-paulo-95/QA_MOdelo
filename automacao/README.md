@@ -5,7 +5,7 @@ Código inicial obrigatório para suítes novas do core bancário. Copie a pasta
 | Pasta | Quando usar |
 |---|---|
 | [playwright/](playwright/) | API de core, web, mobile web, Electron |
-| [cypress/](cypress/) | Produto que **já** usa Cypress |
+| [cypress/](cypress/) | Produto que **já** usa Cypress. Práticas: [cypress/docs/LEIA-ME.md](cypress/docs/LEIA-ME.md) |
 | [appium-wdio/](appium-wdio/) | App nativo **iOS / Android** |
 | [k6/](k6/) | Carga / pico / stress / resistência |
 

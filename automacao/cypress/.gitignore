@@ -3,4 +3,5 @@ cypress/videos/
 cypress/screenshots/
 cypress/downloads/
 .env
+cypress.env.json
 *.log

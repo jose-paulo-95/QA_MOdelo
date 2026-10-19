@@ -1,23 +1,28 @@
 import { transferirValor } from '../../support/flows/transferir-valor.flow';
+import { requireEnv } from '../../support/env';
 import massa from '../../fixtures/transferencia.hml.json';
 
 describe('Transferencia interna', () => {
-  it('TC-CORE-TRF-010 operador conclui transferencia e ve o comprovante @regressao', () => {
-    transferirValor(massa.origem, massa.destino, String(massa.valorValido)).then(
-      (transactionId) => {
-        expect(transactionId.trim()).to.have.length.greaterThan(0);
+  it(
+    'TC-CORE-TRF-010 operador conclui transferencia e ve o comprovante @regressao',
+    { tags: '@regressao' },
+    () => {
+      const token = requireEnv('TOKEN_TITULAR');
+
+      transferirValor(massa.origem, massa.destino, massa.valorValido).then((transactionId) => {
+        const id = transactionId.trim();
 
         // Se a API oficial já estiver no Playwright, remova este request
         // e prove o oráculo no job de API da mesma build.
         cy.request({
-          url: `/lancamentos?transactionId=${transactionId.trim()}`,
+          url: `/lancamentos?transactionId=${id}`,
           headers: {
-            Authorization: `Bearer ${Cypress.env('TOKEN_TITULAR')}`,
+            Authorization: `Bearer ${token}`,
           },
         })
           .its('body')
           .should('have.length', 2);
-      },
-    );
-  });
+      });
+    },
+  );
 });

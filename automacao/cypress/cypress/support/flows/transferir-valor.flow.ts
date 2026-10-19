@@ -6,5 +6,5 @@ export function transferirValor(origem: string, destino: string, valor: string) 
   TransferenciaPage.preencher(origem, destino, valor);
   TransferenciaPage.confirmar();
   cy.wait('@criarTransferencia').its('response.statusCode').should('eq', 201);
-  return TransferenciaPage.comprovante().invoke('text');
+  return TransferenciaPage.comprovante().should('be.visible').invoke('text');
 }

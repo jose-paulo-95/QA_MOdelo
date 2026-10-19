@@ -11,6 +11,6 @@ Quando o usuário pedir para automatizar um cenário/TC- ou revisar spec:
 2. Implementação → `implementar-automacao-teste` + glossário `_shared` + `reference.md` + `examples.md` + pasta `automacao/` → `HANDOFF_IMPLEMENTACAO`.
 3. Revisão → `revisar-automacao-teste` + checklist `12-checklist-revisao-automacao.md` → `HANDOFF_REVIEW_CODIGO`.
 4. Playwright web/API; Cypress legado web; Appium+WDIO app nativo; k6 desempenho.
-5. Título com `TC-`, camadas, oráculo de negócio; sem wait fixo nem segredo no Git.
+5. Título com `TC-`, camadas, oráculo de negócio; sem wait fixo nem segredo no Git. No Cypress, norma 08: seletor conferido no produto, dinheiro como texto, sem condicional, sem `.only`, tag `@regressao` só com filtro registrado.
 6. Não aceitar Playwright/Cypress como evidência de app nativo.
 7. Auto-checagem; severidades bloqueante/importante/sugestão.

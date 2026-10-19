@@ -58,3 +58,4 @@ O agente **lê** `reference.md` e, se houver dúvida de formato, `examples.md` d
 - Validar handoffs antes de pular etapas.
 - R1–R4: revisão humana além do agente de casos.
 - Flaky: fora da suíte que bloqueia no mesmo dia (M4).
+- Cypress legado: escrever e revisar pela norma 08 e pelo guia [automacao/cypress/docs/LEIA-ME.md](../../automacao/cypress/docs/LEIA-ME.md). A camada continua page, flow e spec do boilerplate.

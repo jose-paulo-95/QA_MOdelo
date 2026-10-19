@@ -4,7 +4,9 @@ description: >-
   Implementa automação (Playwright, Cypress, Appium/WebdriverIO ou k6) a partir
   de um caso TC- já escrito no padrão do core bancário, após revisão de casos
   quando R1–R4. Usa boilerplate em automacao/, camadas spec/flow/page|screen,
-  ID no título e oráculo de negócio. Use para automatizar TC-, gerar spec
+  ID no título e oráculo de negócio. No Cypress legado, segue a norma 08:
+  seletor conferido no produto, espera na condição, asserção do Então,
+  dinheiro como texto, sem condicional. Use para automatizar TC-, gerar spec
   E2E/API/app nativo/performance — não use se o usuário só colou requisito sem TC-.
 ---
 
@@ -37,8 +39,9 @@ Entrada preferencial: `## HANDOFF_CASOS`.
 3. Um `test`/`it` por `TC-`; título = ID + efeito + `@regressao` se bloquear release.
 4. Asserções = Então do caso. UI/app R1 → também API.
 5. Segredos via env. Sem wait fixo, XPath absoluto, coordenada, dado real.
-6. Lacunas: `// TODO(contrato):`.
-7. Emitir **HANDOFF_IMPLEMENTACAO** e pedir `revisar-automacao-teste`.
+6. Se a ferramenta for Cypress: aplicar a norma 08, seções 5 a 8 e o checklist da seção 13. Camada segue spec, flow e page do boilerplate. Não trocar a jornada por `Cypress.Commands` nem inventar seletor.
+7. Lacunas: `// TODO(contrato):`.
+8. Emitir **HANDOFF_IMPLEMENTACAO** e pedir `revisar-automacao-teste`.
 
 ## Validações / Não fazer
 

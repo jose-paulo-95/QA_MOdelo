@@ -1,1 +1,3 @@
-// Comandos globais mínimos. Preferir pages e flows a cy.* solto no spec.
+import { register as registerCypressGrep } from '@cypress/grep';
+
+registerCypressGrep();

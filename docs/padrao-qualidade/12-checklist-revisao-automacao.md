@@ -15,8 +15,13 @@ Usada por humanos e pela skill `revisar-automacao-teste`. Um item bloqueante mar
 - [ ] Seletores: role/label/testid (Playwright) ou `data-testid` estável (Cypress)
 - [ ] Independência: não depende da ordem de outro teste no arquivo
 - [ ] Arquivo no caminho padrão (`tests/api|e2e` ou `cypress/e2e/specs`)
-- [ ] Tag `@regressao` só se for suíte que bloqueia release
+- [ ] Tag `@regressao` só se for suíte que bloqueia release, e no Cypress o job filtra de verdade (`@cypress/grep` registrado)
 - [ ] API de core em Playwright quando a suíte nova for Playwright (não duplicar regra no Cypress)
+- [ ] Cypress: seletor conferido no DOM do produto; sem posição como único meio
+- [ ] Cypress: o que o operador vê usa `be.visible`; negativa só depois de positiva na tela certa
+- [ ] Cypress: valor em reais como texto da tela; sem float calculado no teste
+- [ ] Cypress: sem `if` no spec, sem `testIsolation: false`, sem `.only` commitado
+- [ ] `it.skip` traz o desvio: defeito, item de trabalho, quando remover
 
 ## Appium + WebdriverIO (app nativo)
 

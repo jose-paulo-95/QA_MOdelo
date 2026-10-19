@@ -27,6 +27,14 @@ Use este catálogo para classificar achados. Exemplos de código **ruim** = reje
 | Retry CI alto para esconder flake | Importante | Quarentena M4 |
 | Nome de arquivo fora do padrão | Sugestão | `modulo.canal.spec.ts` |
 | Expect sem mensagem | Sugestão | Mensagem do efeito |
+| `.only` commitado | Bloqueante | Remove o foco; ele tira o resto da suíte do CI |
+| Asserção enfraquecida para o teste passar com o defeito | Bloqueante | Manter o Então do `TC-`; o teste fica vermelho |
+| `if` no teste escolhendo caminho pela tela | Importante | Um `TC-` por caminho |
+| `testIsolation: false` | Importante | Cada teste arruma o próprio estado |
+| Negativa sem positiva anterior na tela certa | Importante | Primeiro provar a view (`be.visible`) |
+| Valor em reais calculado com float no teste | Importante | Texto que o operador lê (`100,00`) |
+| `.eq` / `.last` / `.first` como único seletor | Importante | `data-testid` + texto de negócio; `.last()` só após `have.length` |
+| Tag `@regressao` sem filtro registrado no runner Cypress | Importante | `@cypress/grep` 5.x no support e no config; job com `grepTags` |
 
 ---
 
@@ -71,8 +79,14 @@ Use este catálogo para classificar achados. Exemplos de código **ruim** = reje
 
 ### Cypress
 - [ ] `*.cy.ts` em `cypress/e2e/specs`
-- [ ] Page/flow em `support`
-- [ ] Sem `cy.wait(número)`
+- [ ] Page/flow em `support` (jornada não está em `Cypress.Commands`)
+- [ ] Sem `cy.wait(número)`; alias da operação ou elemento visível
+- [ ] Seletor na page conferido no DOM; ordem `data-testid`, depois texto estável
+- [ ] Oráculo é o Então do `TC-`; `be.visible` no que o operador vê
+- [ ] Valor monetário como texto; sem float no spec
+- [ ] Sem `if`, sem `testIsolation: false`, sem `.only`
+- [ ] `it.skip` com desvio de três linhas, se existir
+- [ ] `@cypress/grep` registrado se o título tem `@regressao` e o job filtra por ela
 - [ ] Se há `cy.request` de regra já coberta no Playwright → importante (duplicidade)
 
 ### Appium WDIO

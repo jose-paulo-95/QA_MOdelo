@@ -1,4 +1,5 @@
 import { defineConfig } from 'cypress';
+import { plugin as cypressGrepPlugin } from '@cypress/grep/plugin';
 
 export default defineConfig({
   e2e: {
@@ -7,7 +8,12 @@ export default defineConfig({
     supportFile: 'cypress/support/e2e.ts',
     video: true,
     screenshotOnRunFailure: true,
-    retries: { runMode: 1, openMode: 0 },
+    testIsolation: true,
+    retries: { runMode: 0, openMode: 0 },
+    setupNodeEvents(_on, config) {
+      cypressGrepPlugin(config);
+      return config;
+    },
   },
   env: {
     // Segredos via CYPRESS_TOKEN_TITULAR no pipeline — não commitar valores
